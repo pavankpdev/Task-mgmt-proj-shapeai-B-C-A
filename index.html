@@ -22,9 +22,81 @@
 
     <title>Task Management APP</title>
   </head>
-  <body>
+  <body style="background-color: #ebf3ff">
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="newTask"
+      tabindex="-1"
+      aria-labelledby="newTaskLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="newTaskLabel">Modal title</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="imageURL" class="form-label">Image URL</label>
+              <input
+                type="url"
+                class="form-control"
+                id="imageURL"
+                placeholder="http://image.com/image.jpg"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="taskTitle" class="form-label">Task Title</label>
+              <input
+                type="text"
+                class="form-control"
+                id="taskTitle"
+                placeholder="web development"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="taskType" class="form-label">Task Type</label>
+              <input
+                type="text"
+                class="form-control"
+                id="taskType"
+                placeholder="practice"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="taskDescription" class="form-label"
+                >Task Description</label
+              >
+              <textarea
+                id="taskDescription"
+                class="form-control"
+                rows="3"
+                placeholder="This is DOM Manipulation class"
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
         <div class="container-fluid">
           <a class="fs-3 fw-bolder" href="#">Tasky</a>
           <button
@@ -44,7 +116,12 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
             </ul>
-            <button class="btn btn-primary" type="button">
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#newTask"
+            >
               <i class="far fa-plus"></i> Add New
             </button>
           </div>
@@ -55,7 +132,7 @@
     <main class="container">
       <section class="row justify-content-center mt-5">
         <div class="col-md-8 col-lg-6">
-          <div class="input-group mb-3">
+          <div class="input-group mb-3 shadow">
             <input
               type="search"
               class="form-control"
@@ -66,6 +143,38 @@
             <span class="input-group-text" id="basic-addon1">
               <i class="far fa-search"></i>
             </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Task Container -->
+      <section class="task__container row">
+        <div class="col-md-6 col-lg-4 my-4">
+          <div class="card">
+            <div class="card-header gap-2 d-flex justify-content-end">
+              <button class="btn btn-outline-info">
+                <i class="fal fa-pencil"></i>
+              </button>
+              <button class="btn btn-outline-danger">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+            <div class="card-body">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"
+                alt="image"
+                class="card-img"
+              />
+              <h5 class="card-title mt-4">Task Title</h5>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <span class="badge bg-primary">New</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-outline-primary">Open Task</button>
+            </div>
           </div>
         </div>
       </section>
