@@ -90,7 +90,14 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="addNewCard()"
+              data-bs-dismiss="modal"
+            >
+              Save changes
+            </button>
           </div>
         </div>
       </div>
@@ -149,34 +156,7 @@
 
       <!-- Task Container -->
       <section class="task__container row">
-        <div class="col-md-6 col-lg-4 my-4">
-          <div class="card">
-            <div class="card-header gap-2 d-flex justify-content-end">
-              <button class="btn btn-outline-info">
-                <i class="fal fa-pencil"></i>
-              </button>
-              <button class="btn btn-outline-danger">
-                <i class="far fa-trash-alt"></i>
-              </button>
-            </div>
-            <div class="card-body">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png"
-                alt="image"
-                class="card-img"
-              />
-              <h5 class="card-title mt-4">Task Title</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <span class="badge bg-primary">New</span>
-            </div>
-            <div class="card-footer">
-              <button class="btn btn-outline-primary">Open Task</button>
-            </div>
-          </div>
-        </div>
+        
       </section>
     </main>
 
@@ -186,5 +166,7 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+
+    <script src="index.js"></script>
   </body>
 </html>
